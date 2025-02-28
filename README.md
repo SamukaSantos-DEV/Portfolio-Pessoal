@@ -7,7 +7,6 @@ Bem-vindo ao meu portfólio! Aqui você encontra informações sobre mim, meus p
 - **HTML5**
 - **CSS3**
 - **JavaScript**
-- **React Native**
 - **APIs**
 
 ## 🌍 Acesse o Portfólio
