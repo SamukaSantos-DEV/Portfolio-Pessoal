@@ -22,7 +22,7 @@ Um e-commerce para cantina escolar desenvolvido com HTML, CSS e JavaScript.
 Aplicativo de calculadora desenvolvido em PHP.
 
 ### 🔹 [PixelLife 🎮](https://github.com/SamukaSantos-DEV/PixelLife)
-Jogo de simulação de vida inspirado no estilo pixel art.
+Loja virtual de imagens para artistas postarem suas criações.
 
 ### 🔹 [Convert Coin 💱](https://github.com/SamukaSantos-DEV/Convert-Coin)
 Aplicativo para conversão de moedas desenvolvido em React Native.
