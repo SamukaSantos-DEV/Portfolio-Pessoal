@@ -24,7 +24,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background:#f56565;
+    background: #f56565;
 }
 
 
@@ -34,7 +34,7 @@ nav {
     align-items: center;
     padding: 3rem 0rem;
     position: fixed;
-    width: 100%;    
+    width: 100%;
     z-index: 2;
     background-color: #1a202c;
     animation: fadeInDown;
@@ -70,7 +70,7 @@ nav {
     font-family: 'Poppins';
 }
 
-.nav-links a:hover  {
+.nav-links a:hover {
     text-decoration: underline;
     text-decoration-style: dotted;
     text-underline-offset: 5px;
@@ -154,7 +154,7 @@ h1 {
 .social-btn:hover .tooltip {
     opacity: 1;
     visibility: visible;
-    transform: translateX(-50%) translateY(0px);  
+    transform: translateX(-50%) translateY(0px);
     font-weight: 600;
 }
 
@@ -168,13 +168,38 @@ h1 {
     box-shadow: -5px -5px 20px 0 rgba(0, 0, 0, 0.5);
 
 }
-.html{
+
+.html {
     width: 400px;
-    height: 400px;    
+    height: 400px;
     border-radius: 20px;
     position: relative;
     z-index: 1;
     box-shadow: -5px -5px 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+.linkwatts {
+    color: white;
+    text-decoration: none;
+    transition: color 0.5s ease, opacity 0.5s ease;
+}
+.linkwatts:hover{
+    color: #4fce5d;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 5px;
+}
+
+.linkemail {
+    color: white;
+    text-decoration: none;
+    transition: color 0.5s ease, opacity 0.5s ease;
+}
+.linkemail:hover{
+    color: #f56565;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 5px;
 }
 
 .scroll-to-top-btn {
@@ -187,24 +212,26 @@ h1 {
     text-decoration: none;
     font-size: 1.5rem;
     transition: 1s;
-    opacity: 0;     
-    background-color:#f56565;
+    opacity: 0;
+    background-color: #f56565;
     pointer-events: none;
 }
 
 .scroll-to-top-btn img {
     width: 25px;
     padding: 7px 7px;
-    
+
     filter: brightness(0) invert(1);
 }
-.scroll-to-top-btn img:hover{
-    
+
+.scroll-to-top-btn img:hover {
+
     filter: brightness(1) invert(0);
-    
+
 }
+
 .scroll-to-top-btn:hover {
-    
+
     box-shadow: -5px -5px 20px 0 rgba(0, 0, 0, 0.5);
     background-color: #ffffff;
     cursor: pointer;
@@ -212,8 +239,8 @@ h1 {
 
 .scroll-to-top-btn.show {
     opacity: 1;
-    pointer-events: auto; 
-    transition: opacity 2s ease, transform 1s ease; 
+    pointer-events: auto;
+    transition: opacity 2s ease, transform 1s ease;
 }
 
 .container {
@@ -227,7 +254,7 @@ h1 {
     position: relative;
     width: 20%;
     min-height: 20%;
-    overflow: hidden;    
+    overflow: hidden;
     box-shadow: -5px -5px 20px 0 rgba(65, 65, 65, 0.5);
 }
 
@@ -257,19 +284,21 @@ h1 {
     opacity: 1;
 }
 
-.overlay a {    
+.overlay a {
     text-decoration: none;
-    background:#f56565;
+    background: #f56565;
     border-radius: 10px;
     margin-top: 5px;
     padding: 5px 20px;
 }
-.overlay a img{
+
+.overlay a img {
     width: 32px;
     filter: brightness(0) invert(1);
 }
 
-.fade-up, .fade-down {
+.fade-up,
+.fade-down {
     opacity: 0;
     visibility: hidden;
     transition: all 0.8s ease-out;
