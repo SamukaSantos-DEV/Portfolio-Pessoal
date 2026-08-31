@@ -60,24 +60,22 @@
 
     let scrollAnimationFrame = null;
 
-    const smoothScrollTo = (destination, duration = 720) => {
+    const smoothScrollTo = (destination, duration = 800) => {
         if (scrollAnimationFrame) cancelAnimationFrame(scrollAnimationFrame);
 
         const start = window.scrollY;
-        const target = Math.max(0, destination);
+        const target = Math.max(0, Math.min(destination, document.documentElement.scrollHeight - window.innerHeight));
         const distance = target - start;
 
         if (Math.abs(distance) < 2) return;
 
         const startTime = performance.now();
-        const easeInOutCubic = (t) => t < 0.5
-            ? 4 * t * t * t
-            : 1 - Math.pow(-2 * t + 2, 3) / 2;
+        const easeOutQuint = (x) => 1 - Math.pow(1 - x, 5);
 
         const animate = (now) => {
             const elapsed = now - startTime;
             const progress = Math.min(elapsed / duration, 1);
-            window.scrollTo(0, start + distance * easeInOutCubic(progress));
+            window.scrollTo(0, start + distance * easeOutQuint(progress));
 
             if (progress < 1) {
                 scrollAnimationFrame = requestAnimationFrame(animate);
@@ -97,7 +95,7 @@
         }
 
         const focusElement = target.querySelector('.section-heading, .contact-card') || target;
-        const topOffset = window.innerWidth <= 680 ? 102 : 116;
+        const topOffset = window.innerWidth <= 680 ? 80 : 96;
         const top = focusElement.getBoundingClientRect().top + window.scrollY - topOffset;
         smoothScrollTo(top);
     };
@@ -145,7 +143,13 @@
     };
 
     const updateActiveSection = () => {
-        const scrollPosition = window.scrollY + 140;
+        const atBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 60);
+        if (atBottom && sections.length > 0) {
+            setActiveLink(sections[sections.length - 1].id);
+            return;
+        }
+
+        const scrollPosition = window.scrollY + Math.min(220, window.innerHeight * 0.35);
         let currentId = sections[0]?.id;
 
         sections.forEach((section) => {
